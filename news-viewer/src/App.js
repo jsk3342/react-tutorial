@@ -1,14 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import NewsList from './components/NewsList';
-import Categories from './components/Categories';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import NewsPage from './pages/NewsPage';
 
 function App() {
+
   return (
-    <>
-      <Categories />
-      <NewsList />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<NewsPage />} />
+        <Route path='/:category' element={<NewsPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
